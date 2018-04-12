@@ -1,0 +1,48 @@
+# List of all solutions (x,y) of the integral generalized Ramanujan-Nagell equation
+# x^2 + 7 = y, where
+# x >= 0 is an integer and y >= 0 is an integral S-unit,
+# where S is the set of the first 11 primes.
+# It contains 39 pairs in total.
+# Format: "(x,y)".
+# Computing this list took 94 seconds.
+# Authors: Rafael von Känel and Benjamin Matschke, 2016.
+# License: Creative commons 3.0 by-nc.
+(0,7)
+(1,8)
+(2,11)
+(3,16)
+(4,23)
+(5,32)
+(7,56)
+(9,88)
+(11,128)
+(13,176)
+(14,203)
+(15,232)
+(19,368)
+(21,448)
+(27,736)
+(31,968)
+(35,1232)
+(42,1771)
+(43,1856)
+(53,2816)
+(65,4232)
+(73,5336)
+(75,5632)
+(101,10208)
+(119,14168)
+(181,32768)
+(189,35728)
+(203,41216)
+(211,44528)
+(217,47096)
+(273,74536)
+(594,352843)
+(1058,1119371)
+(1465,2146232)
+(1813,3286976)
+(2741,7513088)
+(3147,9903616)
+(4277,18292736)
+(5355,28676032)

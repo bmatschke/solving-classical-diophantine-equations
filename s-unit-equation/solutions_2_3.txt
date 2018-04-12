@@ -1,0 +1,14 @@
+# List of all triples (a,b,c) satisfying
+#  - a+b=c,
+#  - 0<a<=b<c, and
+#  - rad(abc) | 2*3.
+# It contains 4 triples in total.
+# Format: "r: a + b = c (q)", where r=rad(abc) is the radical and q=log(c)/log(r) is the quality.
+# Computing this list took 1 seconds.
+# Authors: Rafael von Känel and Benjamin Matschke, 2014.
+# License: Creative commons 3.0 by-nc.
+#
+2: 1 + 1 = 2 (1.0000)
+6: 1 + 2 = 3 (0.6131)
+6: 1 + 3 = 4 (0.7737)
+6: 1 + 8 = 9 (1.2263)

@@ -1,0 +1,1752 @@
+<html><head>
+<title>Data for elliptic curves and classical diophantine equations</title>
+<meta name="author" content="Rafael von Kaenel and Benjamin Matschke">
+
+<style type = "text/css"> 
+* {
+  font-family: Geneva,Verdana,Arial,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #333333; #555555;
+}
+
+li {
+  list-style-type: circle;
+}
+
+body {
+  background-color: #444; #666; #bbb; #999; #556; #666;#666; #eee; #E8E8E8; #CCCCCC; #FFFFFF; #F1F1FF; #DDDDBB;#CCB899;
+}
+
+html{
+  margin:0px 0px 0px 0px; 
+  padding:0px 0px 0px 0px; 
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 14px; 
+  color:#fff;  
+  height:100%;
+}
+
+body{
+  margin:0px 0px 0px 0px; 
+  padding:0px 0px 0px 0px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color:#fff;  
+  height:100%;
+}
+ 
+a, a.visited {
+  border-bottom: 1px dotted;
+  border-bottom-width: 1px;
+  color: #33a; #36a;
+}
+
+a:hover, a.active {
+  border-bottom: 1px;
+  border-bottom-width: 1px;
+}
+
+a::selection {
+  background: #fff;
+  color: #f00;
+}
+
+h3 {
+  font-size: 22px;
+  color: #777; #090; #e60;
+}
+
+h4 {
+  font-size: 18px;
+  color: #777; #090; #e60; #388221;
+}
+
+h5 {
+  font-size: 16px;
+  color: #777; #090; #e60; #388221;
+}
+
+#BunteLeiste {
+  background-color: #fff; #aaf; #eef; #7A96AB; #608AAC; #CDDFED; #CCCCCC; #BB8800;
+}
+
+#Inhalt {
+  background-color: #ffffff;#eeeecc;
+}
+
+th, td {
+  padding: 5px;
+}
+
+span.paragraph {
+  color:#e60;
+}
+
+span.emph {
+  font-style:italic;
+}
+
+span.small {
+  font-size: 8px;
+}
+
+span.email {
+  position:relative;
+  top:3px;
+}
+
+sup, .superscript {
+  vertical-align:top;
+  color: inherit;
+  font-size: 10px;
+}
+sub, .subscript {
+  vertical-align:bottom;
+  color: inherit;
+  font-size: 10px;
+}
+
+div.equation {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+div.block {
+  text-align: left;
+  width: 90%;
+  margin: auto;
+  padding: 10pt;
+  background-color: #fafafa;
+  border: 5pt solid;
+  border-color: #eeeeee;
+}
+
+hr.separator {
+  display: block;
+  height: 0pt;
+  border: 0;
+  border-top: 5px solid #ddd;
+  padding: 0;
+  margin-top: 65pt;
+  margin-bottom: 10pt;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+hr.separator2 {
+  display: block;
+  height: 0pt;
+  border: 0;
+  border-top: 5px solid #ddd;
+  padding: 0;
+  margin-top: 10pt;
+  margin-bottom: 20pt;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+span.frac {
+  display: inline-block;
+  font-size: 75%;
+  text-align: center;
+  vertical-align: -5px;
+}
+span.frac > sup {
+  display: block;
+  border-bottom: 1px solid;
+  font: inherit;
+}
+span.frac > span {
+  display: none;
+}
+span.frac > sub {
+  display: block;
+  font: inherit;
+}
+
+.tooltip {
+  display: inline;
+  position: relative;
+  text-decoration: none;
+  top: 0px;
+  left: 0px;
+}
+
+.tooltip:hover:after {
+  background: #333;
+  background: rgba(0,0,0,.8);
+  border-radius: 5px;
+  top: -5px;
+  color: #fff;
+  content: attr(alt);
+  left: 160px;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+  width: 150px;
+}
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: transparent black;
+  border-width: 6px 6px 6px 0;
+  bottom: 20px;
+  content: "";
+  left: 155px;
+  position: absolute;
+  z-index: 99;
+  top: 3px;
+} 
+</style> 
+
+</head>
+<body>
+<div align="center">
+
+<table width=800>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="50" width="800" id="Inhalt">
+<tr><td colspan="5" height="70" align="center">
+<h3>Data <p> <span>&mdash; joint with <a href="http://www.math.princeton.edu/directory/rafael-von-k%C3%A4nel">Rafael von K&auml;nel</a> &mdash;</span> </h3>
+</td></tr>
+<tr><td>
+
+<h3>Contents</h3>
+
+<ul>
+<li><a href="#curves">Elliptic curves with good reduction outside S</a></li>
+<li><a href="#sunit">S-unit equation</a></li>
+<li><a href="#mordell">Mordell equation</a></li>
+<li><a href="#thue">Cubic Thue equation</a></li>
+<li><a href="#thueMahler">Cubic Thue&ndash;Mahler equation</a></li>
+<li><a href="#ramanujanNagell">Generalized Ramanujan&ndash;Nagell equation</a></li>
+<li><a href="#sumsOfUnitsBeingPower">Sums of units being a square or a cube</a></li>
+<li><a href="#sIntegralPoints">S-integral points on elliptic curves of given conductor</a></li>
+<li><a href="#sIntegralPointsHighRank">S-integral points on elliptic curves of high rank</a></li>
+</ul>
+<br>
+<p> 
+This page contains the data attached to the paper <a href="http://arxiv.org/abs/1605.06079">"Solving S-unit, Mordell, Thue, Thue&ndash;Mahler and generalized Ramanujan&ndash;Nagell equations via Shimura&ndash;Taniyama conjecture"</a>.
+The data and source code is available on <a href="http://github.com/bmatschke/solving-classical-diophantine-equations/">github</a>.
+We put all data under a <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative commons 3.0 by-nc</a> license.
+In what follows primes and integers are always rational.
+
+<hr class="separator">
+
+<!-- ############################ Elliptic curves with good reduction outside S ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="curves"></a>Elliptic curves with good reduction outside S</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes.
+We are interested in describing explicitly the set M(S) of all elliptic curves over&nbsp;&#x0211a; up to &#x0211a;-isomorphism with good reduction outside&nbsp;S.
+Each elliptic curve E in M(S) is represented via the two invariants c<sub>4</sub>, c<sub>6</sub> &isin; &#x02124; of some (and thus any) minimal Weierstrass model of E over the integers.
+In particular, the elliptic curve E has a Weierstrass equation
+<div class="equation">
+y<sup>2</sup> = x<sup>3</sup> &minus; 27</sub></span>c<sub>4</sub>x &minus; 54</sub></span>c<sub>6</sub>.
+</div>
+
+<!--
+Rational <a href="https://en.wikipedia.org/wiki/Elliptic_curve#Elliptic_curves_over_the_rational_numbers">elliptic curves</a> E have a Weierstrass equation of the form
+<div class="equation">
+y<sup>2</sup> = x<sup>3</sup> &minus; <span class="frac"><sup>1</sup><span>/</span><sub>48</sub></span>c<sub>4</sub>x &minus; <span class="frac"><sup>1</sup><span>/</span><sub>864</sub></span>c<sub>6</sub>,
+</div>
+with c<sub>4</sub> and c<sub>6</sub> being integers, such that the discriminant &Delta; = 1728(c<sub>4</sub><sup>3</sup> &minus; c<sub>6</sub><sup>2</sup>) is non-zero.
+
+After possibly scaling the variables x and y, we may and do assume that there is no integer u > 1 such that u<sup>4</sup> divides c<sub>4</sub> and u<sup>6</sup> divides c<sub>6</sub>.
+
+
+Let S be a finite set of rational primes.
+Then the elliptic curve E is said to have good reduction outside of S if and only if all rational primes dividing &Delta; lie in S.
+-->
+
+<p>
+<div class="block">
+Table 1: The sets M(S) for certain finite sets S of primes.<br>
+<!--Here, N<sub>S</sub> = <span style="font-size:20">&prod;</span><span style="position:relative; left:-14pt; top:10pt; font-size:10; ">p&isin;S</span><span style="position:relative; left:-13pt">p,</span> and
+M<sub>S</sub> = <span style="font-size:20">&prod;</span><span style="position:relative; left:-14pt; top:10pt; font-size:10; ">p&isin;S</span><span style="position:relative; left:-13pt">p<sup>f(p),</span>,
+where f(2) = 8, f(3) = 5, and f(p) = 2 for primes p &ge; 5.
+-->
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">Sets S</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">{2, p} with p &le; 250</td>
+ <td><a href="elliptic-curve-database/curves__S_2_p_pMax250.txt">.txt</a> (0.2 MB)</td>
+ <td><a href="elliptic-curve-database/curves__S_2_p_pMax250.sobj">.sobj</a> (0.1 MB)</td>
+</tr>
+<tr>
+ <td align="left">{2, 3, p} with p &le; 100</td>
+ <td><a href="elliptic-curve-database/curves__S_2_3_p_pMax100.txt">.txt</a> (2.4 MB)</td>
+ <td><a href="elliptic-curve-database/curves__S_2_3_p_pMax100.sobj">.sobj</a> (1.6 MB)</td>
+</tr>
+<tr>
+ <td align="left">{2, 3, 5, p} with p &le; 31</td>
+ <td><a href="elliptic-curve-database/curves__S_2_3_5_p_pMax31.txt">.txt</a> (10.6 MB)</td>
+ <td><a href="elliptic-curve-database/curves__S_2_3_5_p_pMax31.sobj">.sobj</a> (6.8 MB)</td>
+</tr>
+<tr>
+ <td align="left">{2, 3, 5, 7, 11}</td>
+ <td><a href="elliptic-curve-database/curves__S_2_3_5_7_11.txt">.txt</a> (15.1 MB)</td>
+ <td><a href="elliptic-curve-database/curves__S_2_3_5_7_11.sobj">.sobj</a> (9.1 MB)</td>
+</tr>
+<tr>
+ <td align="left">All sets with N<sub>S</sub><sup>cond</sup> &le; 10<sup>6</sup></td>
+ <td><a href="elliptic-curve-database/curves_maxMS_1000000.txt">.txt</a> (0.4 MB)</td>
+ <td><a href="elliptic-curve-database/curves_maxMS_1000000.sobj">.sobj</a> (0.4 MB)</td>
+</tr>
+<tr>
+ <td align="left">All sets with <span style="font-size:20">&prod;</span><span style="position:relative; left:-14pt; top:10pt; font-size:10; ">p&isin;S</span><span style="position:relative; left:-13pt">p &le; 1000</span></td>
+ <td><a href="elliptic-curve-database/curves_maxNS_1000.txt">.txt</a> (26.3 MB)</td>
+ <td><a href="elliptic-curve-database/curves_maxNS_1000.sobj">.sobj</a> (17.2 MB)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+Here N<sub>S</sub><sup>cond</sup>  <!--<a href="#" alt="N<sub>S</sub><sup>cond</sup> := &prod;<sub>p&isin;S&nbsp;</sub>p<sup>f(p)</sup> where f(2)&nbsp;=&nbsp;8, f(3)&nbsp;=&nbsp;5, and f(p)&nbsp;=&nbsp;2 for p&nbsp;&ge;&nbsp;5." class="tooltip">N<sub>S</sub><sup>cond</sup></a> --> is an upper bound for the conductor of any elliptic curve over &#x0211a; with good reduction outside&nbsp;S, 
+<!--namely N<sub>S</sub><sup>cond</sup> = &prod;<sub>p&isin;S&nbsp;</sub>p<sup>f(p)</sup> where f(2)&nbsp;=&nbsp;8, f(3)&nbsp;=&nbsp;5, and f(p)&nbsp;=&nbsp;2 for p&nbsp;&ge;&nbsp;5.-->
+see [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.4.2.5">4.2.5</a>] for the precise definition.
+For the sets S in the above table and their subsets, the cardinalities&nbsp;|M(S)| are listed in the following file:
+<div class="equation">
+<a href="elliptic-curve-database/numberOfCurves.txt">numberOfCurves.txt</a>
+</div>
+
+<p>
+Parts of our data were already computed by <a href="http://dx.doi.org/10.1080/10586458.2007.10129002">Cremona&ndash;Lingham</a>, <a href="http://arxiv.org/abs/1511.05108">Koutsianas</a> and <a href="https://www.math.ubc.ca/~andrewr/pubs/BeRe-survey.pdf">Bennett&ndash;Rechnitzer</a>, 
+see for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.4.2.5">4.2.5</a>] for a discussion of known methods computing M(S). 
+Further, the special case N<sub>S</sub><sup>cond</sup>&nbsp;&le; 380000 of our data for sets S with N<sub>S</sub><sup>cond</sup>&nbsp;&le; 1000000 can be obtained from <a href="http://johncremona.github.io/ecdata/">Cremona's database</a>
+containing all elliptic curves over &#x0211a; of conductor at most 380000.
+
+<p> 
+Our data motivates the following question.
+Let n be a positive integer and let S(n) denote the set of the first n primes.
+
+<p>
+<span class="paragraph">Question&nbsp;1</span>: For all sets S of primes with |S|&nbsp;&le;&nbsp;n, it holds |M(S)|&nbsp;&le;&nbsp;|M(S(n))|? 
+
+<p>
+The answer is affirmative for all sets S of primes (and their subsets) appearing in the above table. 
+In light of this we conjecture in [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.4.2.5">4.2.5</a>] that Question&nbsp;1 has a positive answer in general, up to adding some absolute constant.
+
+
+<p>
+
+
+
+<hr class="separator">
+
+
+<!-- ############################ S-unit equation ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="sunit"></a>Data for S-unit equations</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes.
+Rational numbers with numerator and denominator having all prime factors in S are called <i>S-units</i>.
+We consider the <i>S-unit equation</i>
+<div class="equation">
+x + y = 1,
+</div>
+where x and y are S-units.
+If c denotes the least common denominator of x and y, then we can write x&nbsp;=&nbsp;a/c and y&nbsp;=&nbsp;b/c with a,&nbsp;b,&nbsp;c coprime integers which are S-units and satisfy a&nbsp;+&nbsp;b&nbsp;=&nbsp;c.
+Thus solving the S-unit equation is equivalent to solving
+<div class="equation">
+a + b = c,
+</div>
+where a,&nbsp;b,&nbsp;c are coprime integers which are S-units.
+To break the natural symmetry of the solutions to this equation, 
+we may and do assume that 0&nbsp;&lt;&nbsp;a&nbsp;&le;&nbsp;b&nbsp;&lt;&nbsp;c. 
+
+<p>
+
+For certain sets S, the following Tables&nbsp;1,&nbsp;2,&nbsp;3 list the set of solutions and their number, up to symmetry. 
+
+<p>
+<div class="block">
+Table 1: Solutions when S is the set of the first n primes, for 1&nbsp;&le;&nbsp;n&nbsp;&le;&nbsp;16:
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="right">n</td>
+ <td align="left">S</td>
+ <td align="right">#solutions</td>
+ <td align="left">Text file (*.txt)</td>
+ <td align="left"><a href="http://sagemath.org/">Sage</a> file (*.sobj)</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">1</td>
+ <td>2</td>
+ <td align="right">1</td>
+ <td><a href="s-unit-equation/solutions_2.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">2</td>
+ <td>2, 3</td>
+ <td align="right">4</td>
+ <td><a href="s-unit-equation/solutions_2_3.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">3</td>
+ <td>2, 3, 5</td>
+ <td align="right">17</td>
+ <td><a href="s-unit-equation/solutions_2_3_5.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">4</td>
+ <td>2, 3, 5, 7</td>
+ <td align="right">63</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">5</td>
+ <td>2, 3, 5, ..., 11</td>
+ <td align="right">190</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">6</td>
+ <td>2, 3, 5, ..., 13</td>
+ <td align="right">545</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">7</td>
+ <td>2, 3, 5, ..., 17</td>
+ <td align="right">1433</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">8</td>
+ <td>2, 3, 5, ..., 19</td>
+ <td align="right">3649</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">9</td>
+ <td>2, 3, 5, ..., 23</td>
+ <td align="right">8828</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">10</td>
+ <td>2, 3, 5, ..., 29</td>
+ <td align="right">20015</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29.txt">.txt</a> (0.7 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29.sobj">.sobj</a> (0.4 MB)</td>
+</tr>
+<tr>
+ <td align="right">11</td>
+ <td>2, 3, 5, ..., 31</td>
+ <td align="right">44641</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31.txt">.txt</a> (1.7 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31.sobj">.sobj</a> (0.9 MB)</td>
+</tr>
+<tr>
+ <td align="right">12</td>
+ <td>2, 3, 5, ..., 37</td>
+ <td align="right">95358</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37.txt">.txt</a> (3.9 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37.sobj">.sobj</a> (1.9 MB)</td>
+</tr>
+<tr>
+ <td align="right">13</td>
+ <td>2, 3, 5, ..., 41</td>
+ <td align="right">199081</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41.txt">.txt</a> (10.5 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41.sobj">.sobj</a> (4.0 MB)</td>
+</tr>
+<tr>
+ <td align="right">14</td>
+ <td>2, 3, 5, ..., 43</td>
+ <td align="right">412791</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41_43.txt">.txt</a> (22.7 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41_43.sobj">.sobj</a> (8.7 MB)</td>
+</tr>
+<tr>
+ <td align="right">15</td>
+ <td>2, 3, 5, ..., 47</td>
+ <td align="right">839638</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41_43_47.txt">.txt</a> (47.8 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41_43_47.sobj">.sobj</a> (18.2 MB)</td>
+</tr>
+<tr>
+ <td align="right">16</td>
+ <td>2, 3, 5, ..., 53</td>
+ <td align="right">1663449</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41_43_47_53.txt">.txt</a> (80.6 MB)</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_7_11_13_17_19_23_29_31_37_41_43_47_53.sobj">.sobj</a> (37.3 MB)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+Here the cases n&nbsp;= 1,&nbsp;...,&nbsp;6 were already computed by <a href="http://dx.doi.org/10.1016/0022-314X(87)90088-6">de&nbsp;Weger</a>; see for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.3">3</a>] for a discussion of known methods solving S-unit equations.
+
+<p> 
+The number N(S) of solutions of the S-unit equation is either zero or 6N'(S)&nbsp;-&nbsp;3, 
+where N'(S) is the number of solutions up to symmetry.
+Note that in Tables&nbsp;1,&nbsp;2,&nbsp;3 we display the numbers&nbsp;N'(S).
+Let n be a positive integer and recall that S(n) denotes the set of the first n primes. 
+Our data motivates the following
+
+<p>
+<span class="paragraph">Question 2</span>: For all sets S of primes with |S|&nbsp;&le;&nbsp;n, it holds N(S)&nbsp;&le;&nbsp;N(S(n))? 
+
+<p>
+The answer is affirmative for each set S and their subsets appearing in our database. 
+In light of this we conjecture in [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.3.2.6">3.2.6</a>] that Question&nbsp;2 has a positive answer up to adding some absolute constant.
+
+<p>
+
+<div class="block">
+Table&nbsp;2: Solutions for all sets S of primes with <span style="font-size:20">&prod;</span><span style="position:relative; left:-14pt; top:10pt; font-size:10; ">p&isin;S</span><span style="position:relative; left:-13pt">p &le; 10<sup>k</sup>, for 1&nbsp;&le;&nbsp;k&nbsp;&le;&nbsp;7:
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="center">10<sup>k</sup></td>
+ <td align="right">#solutions</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="center">10<sup>1</sup></td>
+ <td align="right">5</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_10.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_10.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="center">10<sup>2</sup></td>
+ <td align="right">42</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_100.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_100.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="center">10<sup>3</sup></td>
+ <td align="right">354</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_1000.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_1000.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="center">10<sup>4</sup></td>
+ <td align="right">2362</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_10000.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_10000.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="center">10<sup>5</sup></td>
+ <td align="right">13902</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_100000.txt">.txt</a> (0.4 MB)</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_100000.sobj">.sobj</a> (0.2 MB)</td>
+</tr>
+<tr>
+ <td align="center">10<sup>6</sup></td>
+ <td align="right">79125</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_1000000.txt">.txt</a> (2.6 MB)</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_1000000.sobj">.sobj</a> (1.3 MB)</td>
+</tr>
+<tr>
+ <td align="center">10<sup>7</sup></td>
+ <td align="right">432408</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_10000000.txt">.txt</a> (15.0 MB)</td>
+ <td><a href="s-unit-equation/solutions_uptoRadical_10000000.sobj">.sobj</a> (7.3 MB)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+An abc-triple is given by positive coprime integers a,&nbsp;b,&nbsp;c with a&nbsp;+&nbsp;b&nbsp;=&nbsp;c, and the radical of an integer m is the square-free product of the primes dividing&nbsp;m. 
+The above tables contain in particular all abc-triples with radical at most 10<sup>7</sup> and all abc-triples with radical divisible only by the
+first 16 primes.
+For all these abc-triples, we verified Baker's explicit abc-conjecture [<a href="https://zbmath.org/?q=an:1064.11050">Baker</a>, Conjecture&nbsp;4].
+
+<p>
+
+<div class="block">
+Table&nbsp;3: Solutions when S consists of the first 5 Fermat primes together with&nbsp;2, or the first 6 Mersenne primes together with&nbsp;2:
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">S</td>
+ <td align="right">#solutions</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td>2, 3, 5, 17, 257, 65537</td>
+ <td align="right">65</td>
+ <td><a href="s-unit-equation/solutions_2_3_5_17_257_65537.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_5_17_257_65537.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td>2, 3, 7, 31, 127, 8191, 131071</td>
+ <td align="right">45</td>
+ <td><a href="s-unit-equation/solutions_2_3_7_31_127_8191_131071.txt">.txt</a></td>
+ <td><a href="s-unit-equation/solutions_2_3_7_31_127_8191_131071.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+<p>
+OpenOffice Calc: In case you would like to use the data with OpenOffice Calc, simply open the .txt with this program, 
+and at the start-up dialog add ":+=()" to "Separator options->Separated by->Others", and set "From row" to&nbsp;11.
+
+
+
+<hr class="separator">
+
+<!-- ############################ Mordell equation ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="mordell"></a>Data for Mordell equations</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes.
+An <i>S-integer</i> is a rational number whose denominator has all its prime factors in&nbsp;S.
+Let a be a nonzero integer and consider the <i>Mordell equation</i>
+<div class="equation">
+y<sup>2</sup> = x<sup>3</sup> + a,
+</div>
+where x and y are S-integers.
+The Mordell equation defines an affine model of an elliptic curve over &#x0211a; whose &#x0211a;-rational points form a finitely generated abelian group.
+In what follows we shall refer by <i>rank</i> to the rank of this group. 
+In the following Table&nbsp;1, S denotes the set of the first n primes.
+
+<p>
+<div class="block">
+Table 1: S-integral points on Mordell curves with bounded&nbsp;|a|:
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="right">n</td>
+ <td align="right">rank</td>
+ <td align="center">a</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">&infin;</td>
+ <td align="right">0</td>
+ <td>|a| &le; 10000</td>
+ <td><a href="mordell-equation/allSolutions_r_0_maxA_10000.txt">.txt</a></td>
+ <td><a href="mordell-equation/allSolutions_r_0_maxA_10000.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">300</td>
+ <td align="right">1</td>
+ <td>|a| &le; 10000</td>
+ <td><a href="mordell-equation/allSolutions_r_1_maxA_10000_n_300.txt">.txt</a> (0.8 MB)</td>
+ <td><a href="mordell-equation/allSolutions_r_1_maxA_10000_n_300.sobj">.sobj</a> (0.6 MB)</td>
+</tr>
+<tr>
+ <td align="right">300</td>
+ <td align="right">2</td>
+ <td>|a| &le; 10000</td>
+ <td><a href="mordell-equation/allSolutions_r_2_maxA_10000_n_300.txt">.txt</a> (1.7 MB)</td>
+ <td><a href="mordell-equation/allSolutions_r_2_maxA_10000_n_300.sobj">.sobj</a> (1.2 MB)</td>
+</tr>
+<tr>
+ <td align="right">300</td>
+ <td align="right">3</td>
+ <td>|a| &le; 10000</td>
+ <td><a href="mordell-equation/allSolutions_r_3_maxA_10000_n_300.txt">.txt</a> (1.2 MB)</td>
+ <td><a href="mordell-equation/allSolutions_r_3_maxA_10000_n_300.sobj">.sobj</a> (0.8 MB)</td>
+</tr>
+<tr>
+ <td align="right">300</td>
+ <td align="right">4</td>
+ <td>|a| &le; 10000</td>
+ <td><a href="mordell-equation/allSolutions_r_4_maxA_10000_n_300.txt">.txt</a> (0.2 MB)</td>
+ <td><a href="mordell-equation/allSolutions_r_4_maxA_10000_n_300.sobj">.sobj</a> (0.1 MB)</td>
+</tr>
+<tr>
+ <td align="right">1000</td>
+ <td align="right">1</td>
+ <td>|a| &le; 10000</td>
+ <td><a href="mordell-equation/allSolutions_r_1_maxA_10000_n_1000.txt">.txt</a> (1.0 MB)</td>
+ <td><a href="mordell-equation/allSolutions_r_1_maxA_10000_n_1000.sobj">.sobj</a> (0.7 MB)</td>
+</tr>
+<tr>
+ <td align="right">100000</td>
+ <td align="right">1</td>
+ <td>|a| &le; 10</td>
+ <td><a href="mordell-equation/allSolutions_r_1_maxA_10_n_100000.txt">.txt</a></td>
+ <td><a href="mordell-equation/allSolutions_r_1_maxA_10_n_100000.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+All Mordell curves with |a|&nbsp;&le;&nbsp;10000 have rank at most&nbsp;4, and thus the table contains all their S-integral points for n&nbsp;=&nbsp;300.
+Similarly, all Mordell curves with |a|&nbsp;&le;&nbsp;10 have rank&nbsp;0 or&nbsp;1, and thus the table contains all their S-integral points for n&nbsp;=&nbsp;100000.
+<a href="http://dx.doi.org/10.1007/BF01214451">Fueter</a> gave an explicit formula for the rational points on Mordell curves of rank&nbsp;0. 
+In particular the above list for rank 0 is well known and stated only for the sake of completeness.
+
+<p>
+
+In the important special case when S is empty, our data was already computed by <a href="http://dx.doi.org/10.1023/A:1000281602647">Gebel&ndash;Peth&#337;&ndash;Zimmer</a> and <a href="http://dx.doi.org/10.1112/S1461157015000182">Bennett&ndash;Ghadermarzi</a>.
+See for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.4">4</a>] for a discussion of known methods solving Mordell equations.
+
+<p>
+Our algorithm depends on having a Mordell&ndash;Weil basis of the &#x0211a;-rational points of the elliptic curve associated to the Mordell equation.
+The following sage-object file contains a list of all such bases for |a|&nbsp;&le;&nbsp;10000.
+It is based on a <a href="http://tnt.math.se.tmu.ac.jp/simath/MORDELL/">database</a> computed by <a href="http://dx.doi.org/10.1023/A:1000281602647">Gebel&ndash;Peth&#337;&ndash;Zimmer</a>, with a few updates (a basis for a = 7823 was missing, and the given points for a&nbsp;=&nbsp;-7086 and -6789 were not saturated; according to some computations in magma and sage this list is correct now, unconditionally).
+<div class="equation">
+<a href="mordell-weil-bases/mwMordell10000.sobj">mwMordell10000.sobj</a>
+</div>
+
+<p>
+
+In the following Table&nbsp;2, S denotes the set of the first n primes.
+
+<p>
+
+<div class="block">
+Table 2: S-integral points on some Mordell curves of high rank:
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="right">n</td>
+ <td align="right">rank</td>
+ <td align="right">a</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">140</td>
+ <td align="right">5</td>
+ <td align="right">66265</td>
+ <td><a href="mordell-equation/mordell_a_66265_n_140.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_66265_n_140.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">175</td>
+ <td align="right">5</td>
+ <td align="right">66265</td>
+ <td><a href="mordell-equation/mordell_a_66265_n_175.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_66265_n_175.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">64</td>
+ <td align="right">6</td>
+ <td align="right">1358556</td>
+ <td><a href="mordell-equation/mordell_a_1358556_n_64.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_1358556_n_64.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">84</td>
+ <td align="right">6</td>
+ <td align="right">1358556</td>
+ <td><a href="mordell-equation/mordell_a_1358556_n_84.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_1358556_n_84.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">40</td>
+ <td align="right">7</td>
+ <td align="right">47550317</td>
+ <td><a href="mordell-equation/mordell_a_47550317_n_40.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_47550317_n_40.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">46</td>
+ <td align="right">7</td>
+ <td align="right">47550317</td>
+ <td><a href="mordell-equation/mordell_a_47550317_n_46.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_47550317_n_46.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">35</td>
+ <td align="right">8</td>
+ <td align="right">1632201497</td>
+ <td><a href="mordell-equation/mordell_a_1632201497_n_35.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_1632201497_n_35.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">40</td>
+ <td align="right">8</td>
+ <td align="right">1632201497</td>
+ <td><a href="mordell-equation/mordell_a_1632201497_n_40.txt">.txt</a></td>
+ <td><a href="mordell-equation/mordell_a_1632201497_n_40.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+For a given Mordell equation, our data suggests that the number of S-integral solutions grows very slowly in terms of the cardinality&nbsp;|S|.
+In view of this we propose the following conjecture.
+
+<p>
+
+<span class="paragraph">Conjecture</span>: There is a constant&nbsp;c, depending only on&nbsp;a, such that for all finite sets S of primes the Mordell equation y<sup>2</sup>&nbsp;=&nbsp;x<sup>3</sup>&nbsp;+&nbsp;a has at most (|S| + 2)<sup>c</sup> S-integral solutions.
+
+<p>
+
+In [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.4.2.7">4.2.7</a>] we motivate and discuss various questions and conjectures which moreover refine the above conjecture.
+
+<hr class="separator">
+
+
+<p>
+<h4>Appendix</h4>
+Some old data, which is now superseded by the above data.
+We say that an integral solution (x,&nbsp;y) of Mordell's equation is primitive if the greatest common divisor of x<sup>3</sup> and y<sup>2</sup> is sixth power-free.
+Suppose that our given integer a has the prime factorization a = &plusmn;&prod;p<sup>&alpha;(p)</sup> and then define r<sub>2</sub>(a)&nbsp;=&nbsp;&prod;p<sup>min(2,&alpha;(p))</sup>.
+The file
+
+<p>
+
+<div class="equation">
+<a href="mordell-equation/mordell_185.txt">mordell_185.txt</a>
+</div>
+
+<p>
+
+contains all primitive solutions for each a with r<sub>2</sub>(a)&nbsp;&le;&nbsp;185; in the file we write c(a)&nbsp;=&nbsp;r<sub>2</sub>(a).
+The computation was based on <a href="http://johncremona.github.io/ecdata/">Cremona's database</a>.
+
+<hr class="separator">
+
+<!-- ############################ Cubic Thue equation ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="thue"></a>Data for cubic Thue equations</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes, and let a,&nbsp;b,&nbsp;c,&nbsp;d be integers.
+Suppose that m is a nonzero integer and consider the <i>cubic Thue equation</i>
+<div class="equation">
+ax<sup>3</sup> + bx<sup>2</sup>y + cxy<sup>2</sup> + dy<sup>3</sup> = m,
+</div>
+where x and y are S-integers. Here we assume that the discriminant D of f(x,&nbsp;y) is nonzero, where f(x,&nbsp;y) is the binary form given by the left hand side of the equation; see for example [<a href="https://archive.org/details/3rdedlessonintro00salmuoft">Salmon</a>, p. 175] for the definition of&nbsp;D.
+
+
+
+<p>
+<div class="block">
+Table 1: S-integral solutions of all cubic Thue equations f(x,&nbsp;y)&nbsp;=&nbsp;1 with nonzero discriminant D bounded by |D|&nbsp;&le;&nbsp;D<sub>max</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="right">n</td>
+ <td align="center">D<sub>max</sub></td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">100</td>
+ <td align="right">10000</td>
+ <td><a href="thue-equation/thue__maxD10000_n100.txt">.txt</a> (2.1 MB)</td>
+ <td><a href="thue-equation/thue__maxD10000_n100.sobj">.sobj</a> (1.4 MB)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+The above table only contains the data for reduced&nbsp;f(x,&nbsp;y), which is sufficient to cover all cubic binary forms with nonzero discriminant D bounded by |D|&nbsp;&le;&nbsp;D<sub>max</sub> since any such form is equivalent to a reduced one; see [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.5">5</a>] for details. 
+
+<p>
+<div class="block">
+Table 2: S-integral solutions of certain classical cubic Thue equations f(x,&nbsp;y)&nbsp;=&nbsp;m with 1&nbsp;&le;&nbsp;m&nbsp;&le;&nbsp;m<sub>max</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="center">a</td>
+ <td align="center">b</td>
+ <td align="center">c</td>
+ <td align="center">d</td>
+ <td align="center">m<sub>max</td>
+ <td align="center">n</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td align="right">0</td>
+ <td align="right">1</td>
+ <td>100</sub></td>
+ <td align="right">100</td>
+ <td><a href="thue-equation/thue_1_0_0_1_maxM100_n100.txt">.txt</a></td>
+ <td><a href="thue-equation/thue_1_0_0_1_maxM100_n100.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td align="right">0</td>
+ <td align="right">2</td>
+ <td>100</td>
+ <td align="right">100</td>
+ <td><a href="thue-equation/thue_1_0_0_2_maxM100_n100.txt">.txt</a></td>
+ <td><a href="thue-equation/thue_1_0_0_2_maxM100_n100.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">2</td>
+ <td align="right">3</td>
+ <td align="right">4</td>
+ <td>100</td>
+ <td align="right">100</td>
+ <td><a href="thue-equation/thue_1_2_3_4_maxM100_n100.txt">.txt</a></td>
+ <td><a href="thue-equation/thue_1_2_3_4_maxM100_n100.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">0</td>
+ <td align="right">1</td>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td>100</td>
+ <td align="right">100</td>
+ <td><a href="thue-equation/thue_0_1_1_0_maxM100_n100.txt">.txt</a></td>
+ <td><a href="thue-equation/thue_0_1_1_0_maxM100_n100.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+Here we consider only positive m in order to break the symmetry f(&minus;x,&nbsp;&minus;y)&nbsp;= &minus;f(x,&nbsp;y).
+
+<p>
+See for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.5">5</a>] for a discussion of known methods solving cubic Thue equations.
+
+<p>
+
+For a given cubic Thue equation, our data suggests that the number of S-integral solutions grows very slowly in terms of the cardinality&nbsp;|S|.
+In view of this we propose the following conjecture.
+
+<p>
+
+<span class="paragraph">Conjecture</span>: There is a constant&nbsp;c, depending only on D and&nbsp;m, such that for all finite sets S of primes the cubic Thue equation f(x,&nbsp;y)&nbsp;=&nbsp;m of discriminant D has at most (|S|&nbsp;+&nbsp;2)<sup>c</sup> S-integral solutions.
+
+<p>
+
+In [vKM, Sections&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.5.3.2">5.3.2</a> and&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.4.2.7">4.2.7</a>] we motivate and discuss various questions and conjectures which moreover refine the above conjecture.
+
+<hr class="separator">
+
+
+<!-- ############################ Cubic Thue&ndash;Mahler equation ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="thueMahler"></a>Data for cubic Thue&ndash;Mahler equations</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes, and let a,&nbsp;b&nbsp;c,&nbsp;d be integers.
+We consider the <i>cubic Thue&ndash;Mahler equation</i>
+<div class="equation">
+ax<sup>3</sup> + bx<sup>2</sup>y + cxy<sup>2</sup> + dy<sup>3</sup> = z,
+</div>
+where x,&nbsp;y,&nbsp;z are integers and z has all prime factors in&nbsp;S.
+Here we assume again that the discriminant D of f(x,&nbsp;y) is nonzero, where f(x,&nbsp;y) is the binary form given by the left hand side of the equation.
+We say that a solution (x,&nbsp;y,&nbsp;z) of the cubic Thue&ndash;Mahler equation is primitive if the integers x and y are coprime. 
+
+<p>
+<div class="block">
+Table 1: Primitive solutions of all cubic Thue&ndash;Mahler equations f(x,&nbsp;y)&nbsp;=&nbsp;z with nonzero discriminant D bounded by |D|&nbsp;&le;&nbsp;D<sub>max</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="right">n</td>
+ <td align="center">D<sub>max</sub></td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">2</td>
+ <td align="right">3000</td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD3000_n2.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD3000_n2.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">3</td>
+ <td align="right">700</td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD700_n3.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD700_n3.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">4</td>
+ <td align="right">100</td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD100_n4.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD100_n4.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">5</td>
+ <td align="right">16</td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD16_n5.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler__maxD16_n5.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>
+
+The above table only contains the data for reduced f(x,&nbsp;y), which is sufficient to cover all cubic binary forms with nonzero discriminant D bounded by |D|&nbsp;&le;&nbsp;D<sub>max</sub> since any such form is equivalent to a reduced one; see [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.5">5</a>] for details. 
+
+<p>
+<div class="block">
+Table 2: Primitive solutions of certain classical cubic Thue&ndash;Mahler equations.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="center">a</td>
+ <td align="center">b</td>
+ <td align="center">c</td>
+ <td align="center">d</td>
+ <td align="left">S</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">1</td>
+ <td align="right">-1</td>
+ <td align="right">1</td>
+ <td align="right">1</td>
+ <td align="left">11</td>
+ <td><a href="thue-mahler-equation/thueMahler_1_-1_1_1_m1_S_11.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler_1_-1_1_1_m1_S_11.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td align="right">-3</td>
+ <td align="right">-1</td>
+ <td align="left">3, 17, 19</td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_-3_-1_m1_S_3_17_19.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_-3_-1_m1_S_3_17_19.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">-23</td>
+ <td align="right">5</td>
+ <td align="right">24</td>
+ <td align="left">2, 3, 5, 7</td>
+ <td><a href="thue-mahler-equation/thueMahler_1_-23_5_24_m1_n4.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler_1_-23_5_24_m1_n4.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td align="right">0</td>
+ <td align="right">1</td>
+ <td align="left">2, 3, 5, 7, 11, 13</td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_0_1_m1_n6.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_0_1_m1_n6.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td align="right">0</td>
+ <td align="right">2</td>
+ <td align="left">2, 3, 5, 7, 11, 13</td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_0_2_m1_n6.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_0_2_m1_n6.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">1</td>
+ <td align="right">0</td>
+ <td align="right">0</td>
+ <td align="right">3</td>
+ <td align="left">2, 3, 5, 7, 11, 13</td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_0_3_m1_n6.txt">.txt</a></td>
+ <td><a href="thue-mahler-equation/thueMahler_1_0_0_3_m1_n6.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>
+
+Here the solutions of the first three equations were already known:
+The first equation is due to <a href="http://dx.doi.org/10.2307/2006209">Agrawal&ndash;Coates&ndash;Hunt&ndash;van&nbsp;der&nbsp;Poorten</a>,
+the second one to <a href="http://dx.doi.org/10.1515/9783110865950.289">Tzanakis&ndash;de&nbsp;Weger</a>,
+and the third one to a further paper of <a href="http://www.numdam.org/item?id=CM_1992__84_3_223_0">Tzanakis&ndash;de&nbsp;Weger</a>.
+See for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.5">5</a>] for a discussion of known methods solving cubic Thue&ndash;Mahler equations.  
+
+<p>
+
+In the case (a,&nbsp;b,&nbsp;c,&nbsp;d) = (0,&nbsp;1,&nbsp;1,&nbsp;0), the equation becomes xy(x+y)&nbsp;=&nbsp;z and thus the cubic Thue&ndash;Mahler equation is in this case equivalent to the <a href="#sunit">S-unit equation</a>.
+
+<hr class="separator">
+
+<!-- ############################ Generalized Ramanujan&ndash;Nagell equation ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="ramanujanNagell"></a>Data for generalized Ramanujan&ndash;Nagell equations</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes, and let b be a nonzero integer.
+We consider the following <i>generalized Ramanujan&ndash;Nagell equation</i>
+<div class="equation">
+x<sup>2</sup> + b = y,
+</div>
+where x is an S-integer and y is an S-unit.
+This generalizes the original Ramanujan&ndash;Nagell equation x<sup>2</sup>&nbsp;+&nbsp;7&nbsp;=&nbsp;2<sup>k</sup> solved in positive integers x and&nbsp;k. 
+
+<p>
+<div class="block">
+Table 1: Solutions of all generalized Ramanujan&ndash;Nagell equations with nonzero b bounded by |b| &le; b<sub>max</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="center">n</td>
+ <td align="center">b<sub>max</sub></td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">2</td>
+ <td align="right">1000</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB1000_c1_n2.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB1000_c1_n2.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">3</td>
+ <td align="right">250</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB250_c1_n3.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB250_c1_n3.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">4</td>
+ <td align="right">35</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB35_c1_n4.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB35_c1_n4.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">5</td>
+ <td align="right">12</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB12_c1_n5.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXY__maxB12_c1_n5.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+We next consider two classical cases of the generalized Ramanujan&ndash;Nagell equation which are both inspired by the original problem.
+
+<p>
+<div class="block">
+Table 2: Solutions of the Diophantine problem x<sup>2</sup>&nbsp;+&nbsp;7&nbsp;=&nbsp;y, where x,&nbsp;y are integers and y has all prime factors among the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="right">n</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">8</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellIntegralXY_b7_n8.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellIntegralXY_b7_n8.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">9</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellIntegralXY_b7_n9.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellIntegralXY_b7_n9.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="right">11</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellIntegralXY_b7_n11.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellIntegralXY_b7_n11.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!--
+<p>
+For all integers 2&nbsp;&le;&nbsp;d&nbsp;&le;&nbsp;888, the following file lists all solutions of the Diophantine problem x<sup>2</sup>&nbsp;+&nbsp;7&nbsp;=&nbsp;d<sup>n</sup>, where x and n are positive integers.
+
+<div class="equation">
+<a href="ramanujanNagellXN__b7_c1_dMax888.txt">.txt</a>,
+<a href="ramanujanNagellXN__b7_c1_dMax888.sobj">.sobj</a>
+</div>
+-->
+
+<p>
+<div class="block">
+Table 3: Solutions of the Diophantine problems x<sup>2</sup>&nbsp;+&nbsp;7&nbsp;=&nbsp;d<sup>k</sup> for any integer d in the range 2&nbsp;&le;&nbsp;d&nbsp;&le;&nbsp;d<sub>max</sub>, where x and k are positive integers.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="center">d<sub>max</sub></td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="right">888</td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXN__b7_c1_dMax888.txt">.txt</a></td>
+ <td><a href="generalized-ramanujan-nagell-equations/ramanujanNagellXN__b7_c1_dMax888.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+We point out that certain cases in the above tables are already known by the work of <a href="http://dx.doi.org/10.1090/S0025-5718-1986-0856715-5">Peth&#337;&ndash;de&nbsp;Weger</a>.
+See for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.6">6</a>] for a discussion of known methods solving generalized Ramanujan&ndash;Nagell equations. 
+
+
+<hr class="separator">
+
+<!-- ############################ Sums of units being a square or a cube ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="sumsOfUnitsBeingPower"></a>Data for sums of units being a square or a cube</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes and let &#8467; be in {2,&nbsp;3}.
+We consider the equation
+<div class="equation">
+x + y = z<sup>&#8467;</sup>,
+</div>
+where x,&nbsp;y,&nbsp;z are integers and x,&nbsp;y are S-units (i.e. all primes dividing xy lie in&nbsp;S).
+For certain sets&nbsp;S, we now list all solutions up to symmetry.
+
+<p>
+<div class="block">
+Table 1 (Squares): For certain sets S, all solutions of x&nbsp;+&nbsp;y&nbsp;=&nbsp;z<sup>2</sup> up to symmetry.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">Sets S</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">{2, p} with p &le; 250</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_p_pMax250.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_p_pMax250.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">{2, 3, p} with p &le; 100</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_3_p_pMax100.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_3_p_pMax100.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">{2, 3, 5, p} with p &le; 31</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_3_5_p_pMax31.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_3_5_p_pMax31.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">{2, 3, 5, 7, 11}</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_3_5_7_11.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingASquare__S_2_3_5_7_11.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+
+<div class="block">
+Table 2 (Cubes): For certain sets&nbsp;S, all solutions of x&nbsp;+&nbsp;y&nbsp;=&nbsp;z<sup>3</sup> up to symmetry.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">Sets S</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">{2, p} with p &le; 250</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_p_pMax250.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_p_pMax250.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">{2, 3, p} with p &le; 100</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_3_p_pMax100.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_3_p_pMax100.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">{2, 3, 5, p} with p &le; 31</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_3_5_p_pMax31.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_3_5_p_pMax31.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">{2, 3, 5, 7, 11}</td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_3_5_7_11.txt">.txt</a></td>
+ <td><a href="sums-of-units-equations/sumsOfUnitsBeingACube__S_2_3_5_7_11.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+Parts of the above data were already computed by <a href="http://dx.doi.org/10.1016/0019-3577(90)90007-A">de&nbsp;Weger</a> and <a href="http://arxiv.org/abs/1603.07922">Bennett&ndash;Billerey</a>.
+See for example [vKM, Section&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.6.2.1">6.2.1</a>] for a discussion of known methods computing sums of units which are squares or cubes.
+
+<hr class="separator">
+
+
+<!-- ############################ S-integral points on elliptic curves of given conductor ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="sIntegralPoints"></a>S-integral points on elliptic curves of given conductor</h3>
+</header>
+<hr class="separator2">
+
+Let S be a finite set of primes, and let E be an elliptic curve over&nbsp;&#x0211a;.
+We are interested to find all S-integral points on&nbsp;E, that is we would like to determine all S-integral solutions of a minimal Weierstrass equation of E over the integers. 
+
+<p>
+
+<a href="http://johncremona.github.io/ecdata/">Cremona's database</a> contains in particular all elliptic curves over&nbsp;&#x0211a; of conductor at most&nbsp;1000.
+For certain finite sets S of primes, we used our elliptic logarithm sieve to compute all S-integral points on these elliptic curves.   
+
+<p>
+<div class="block">
+Table 1: All S-integral points on all elliptic curves over&nbsp;&#x0211a; with conductor N&nbsp;&le;&nbsp;N<sub>max</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">N<sub>max</sub></td>
+ <td align="left">n</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">100</td>
+ <td align="left">10000</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-bounded-conductor/sIntegralPoints__maxN100_n10000.txt">.txt</a> (0.1 MB)</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-bounded-conductor/sIntegralPoints__maxN100_n10000.sobj">.sobj</a> (0.1 MB)</td>
+</tr>
+<tr>
+ <td align="left">1000</td>
+ <td align="left">20</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-bounded-conductor/sIntegralPoints__maxN1000_n20.txt">.txt</a> (2.1 MB)</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-bounded-conductor/sIntegralPoints__maxN1000_n20.sobj">.sobj</a> (1.1 MB)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+The input of our elliptic logarithm sieve requires an initial height bound and a Mordell&ndash;Weil basis of the &#x0211a;-rational points of&nbsp;E:
+We applied the initial height bound of <a href="http://dx.doi.org/10.1017/S0305004199003916">Peth&#337;&ndash;Zimmer&ndash;Gebel&ndash;Herrmann</a> based on the theory of logarithmic forms and we used the Mordell&ndash;Weil bases contained in <a href="http://johncremona.github.io/ecdata/">Cremona's database</a>.
+
+<p>
+
+We point out that the data in the above table is already known in the important special case when S is the empty set; indeed <a href="http://johncremona.github.io/ecdata/">Cremona</a> computed all integral points.
+See for example [vKM, Sections&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.4">4</a> and&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#section.11">11</a>] for a discussion of known methods enumerating all S-integral points on elliptic curves over&nbsp;&#x0211a;.
+
+<p>
+
+For a given elliptic curve over&nbsp;&#x0211a;, our data suggests that the number of S-integral points grows very slowly in terms of the cardinality&nbsp;|S|.
+In view of this we propose the following conjecture.
+
+<p>
+
+<span class="paragraph">Conjecture</span>:
+There is a constant&nbsp;c, depending only&nbsp;E, such that for all finite sets S of primes the elliptic curve E has at most (|S|&nbsp;+&nbsp;2)<sup>c</sup> S-integral points.
+
+<p>
+
+In [vKM, Sections&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.11.11.3">11.11.3</a> and&nbsp;<a href="http://arxiv.org/pdf/1605.06079v1.pdf#subsubsection.4.2.7">4.2.7</a>] we motivate and discuss various questions and conjectures which moreover refine and generalize the above conjecture.
+
+
+<hr class="separator">
+
+<!-- ############################ S-integral points on elliptic curves of high rank ########################################## -->
+
+<p>
+<header>
+<h3 style="text-align:center"><a name="sIntegralPointsHighRank"></a>S-integral points on elliptic curves of high rank</h3>
+</header>
+<hr class="separator2">
+
+Let E be an elliptic curve over&nbsp;&#x0211a;.
+The&nbsp;&#x0211a;-rational points E(&#x0211a;) of E form a finitely generated abelian group of rank&nbsp;r. We now consider some curves with large rank&nbsp;r.
+To determine all S-integral points on these curves, 
+we applied our elliptic logarithm sieve with the initial height bounds of <a href="http://dx.doi.org/10.1017/S0305004199003916">Peth&#337;&ndash;Zimmer&ndash;Gebel&ndash;Herrmann</a> based on the theory of logarithmic forms and the Mordell-Weil bases described below.
+
+
+<p>
+
+<span class="paragraph">E<sub>Kr</sub></span>: <a href="http://dx.doi.org/10.1090/S0025-5718-1986-0829634-8">Kretschmer</a> constructed in particular an elliptic curve E<sub>Kr</sub> over&nbsp;&#x0211a; with E<sub>Kr</sub>(&#x0211a;) of rank&nbsp;8, which admits the following Weierstrass equation 
+<div class="equation">
+y<sup>2</sup> + xy = x<sup>3</sup> &minus; 5818216808130x + 5401285759982786436.
+</div>
+
+<p>
+
+To compute  all S-integral points on&nbsp;E<sub>Kr</sub>, we used the Mordell&ndash;Weil basis of&nbsp;E<sub>Kr</sub>(&#x0211a;) which was constructed by <a href="http://dx.doi.org/10.1216/rmjm/1181072159">Siksek</a>.
+
+<div class="block">
+Table 1: All S-integral points on&nbsp;E<sub>Kr</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">E</td>
+ <td align="right">rank</td>
+ <td align="right">n</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">E<sub>Kr</sub></td>
+ <td align="right">= 8 </td>
+ <td align="right">0</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_0_0_-5818216808130_5401285759982786436_n_0.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_0_0_-5818216808130_5401285759982786436_n_0.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">E<sub>Kr</sub></td>
+ <td align="right">= 8 </td>
+ <td align="right">12</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_0_0_-5818216808130_5401285759982786436_n_12.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_0_0_-5818216808130_5401285759982786436_n_12.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+<span class="paragraph">E<sub>Me</sub></span>:
+<a href="http://www.ams.org/mathscinet-getitem?mr=688896">Mestre</a> constructed in particular an elliptic curve over&nbsp;&#x0211a; of analytic rank&nbsp;12, 
+which admits the following Weierstrass equation
+<div class="equation">
+y<sup>2</sup> + y = x<sup>3</sup> &minus; 6349808647 x + 193146346911036.
+</div>
+
+<p>
+Mestre also found 12 independent&nbsp;&#x0211a;-rational points on E<sub>Me</sub>. 
+The rank part of the BSD-conjecture for E<sub>Me</sub> implies that the following assumption holds. 
+
+<p>
+
+Assumption: The rank of E<sub>Me</sub>(&#x0211a;) is at most the analytic rank of E<sub>Me</sub>.  
+
+<p>
+Under this assumption, <a href="http://dx.doi.org/10.1216/rmjm/1181072159">Siksek</a> determined a Mordell&ndash;Weil basis of&nbsp;E<sub>Me</sub>(&#x0211a;) 
+which we used to determine all S-integral points on E<sub>Me</sub>.
+
+<div class="block">
+Table 2: Under the above assumption, this table lists all S-integral points on&nbsp;E<sub>Me</sub>, where S is the set of the first n primes.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">E</td>
+ <td align="right">rank</td>
+ <td align="right">n</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">E<sub>Me</sub></td>
+ <td align="right">&ge; 12</td>
+ <td align="right">0</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_0_1_-6349808647_193146346911036_n_0.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_0_1_-6349808647_193146346911036_n_0.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">E<sub>Me</sub></td>
+ <td align="right">&ge; 12</td>
+ <td align="right">7</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_0_1_-6349808647_193146346911036_n_7.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_0_1_-6349808647_193146346911036_n_7.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+
+
+Next we consider curves E for which the rank r of E(&#x0211a;) is even higher.
+Unfortunately, we could not determine a Mordell&ndash;Weil bases for E(&#x0211a;) when r was larger than 12.
+To illustrate the efficiency of our elliptic logarithm sieve, we computed at least the S-integral points on E which lie in the subgroup of E(&#x0211a;) generated by the &#x0211a;-rational torsion points of E and r independent &#x0211a;-rational points of E; see Table&nbsp;3.
+
+<p>
+
+<span class="paragraph">E<sub>Fe</sub></span>:
+<a href="https://zbmath.org/?q=an:0861.11035">Fermigier</a> constructed an elliptic curve over &#x0211a; of rank r&nbsp;=&nbsp;14:
+<div class="equation">
+y<sup>2</sup> = x<sup>3</sup> + x<sup>2</sup> &minus;<span style="font-size:10">&nbsp;1692310759026568999140789578145</span>x  <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +<span style="font-size:10">&nbsp;839379398840982294584587970773038145228669599</span>.
+</div>
+
+<p>
+
+<span class="paragraph">E<sub>El17</sub></span>:
+<a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind0506&L=NMBRTHRY&F=&S=&P=16520">Elkies</a> constructed an elliptic curve over &#x0211a; of rank r&nbsp;=&nbsp;17:
+<div class="equation">
+y<sup>2</sup> + xy + y = x<sup>3</sup> &minus;<span style="font-size:10">&nbsp;957089489055751752507625259831765957846101</span>x  <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +<span style="font-size:10">&nbsp;351598252970651757672333752869879740192822872602430248013582348</span>.
+</div>
+
+<p>
+
+<span class="paragraph">E<sub>El19</sub></span>:
+<a href="https://web.math.pmf.unizg.hr/~duje/tors/rkeq19.html">Elkies</a> constructed an elliptic curve over &#x0211a; of rank r&nbsp;=&nbsp;19:
+<div class="equation">
+y<sup>2</sup> + xy + y = x<sup>3</sup> &minus; x<sup>2</sup> +<span style="font-size:9">&nbsp;31368015812338065133318565292206590792820353345</span>x  <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +<span style="font-size:9">&nbsp;302038802698566087335643188429543498624522041683874493555186062568159847</span>.
+</div>
+
+
+<p>
+<div class="block">
+Table 3: All S-integral points on E which lie in the subgroup of E(&#x0211a;) generated by the &#x0211a;-rational torsion points of E and r independent &#x0211a;-rational points of&nbsp;E,
+where S is the set of the first n primes and E is one of the above three curves. 
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">E</td>
+ <td align="right">rank</td>
+ <td align="left">P</td>
+ <td align="right">n</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">E<sub>Fe</sub></td>
+ <td align="right">= 14 </td>
+ <td align="left">[<a href="https://web.math.pmf.unizg.hr/~duje/tors/rkeq14.html">Fermigier</a>]</td>
+ <td align="right">0</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_1_0_-1692310759026568999140789578145_839379398840982294584587970773038145228669599_n_0.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_1_0_-1692310759026568999140789578145_839379398840982294584587970773038145228669599_n_0.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">E<sub>Fe</sub></td>
+ <td align="right">= 14 </td>
+ <td align="left">[<a href="https://web.math.pmf.unizg.hr/~duje/tors/rkeq14.html">Fermigier</a>]</td>
+ <td align="right">2</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_1_0_-1692310759026568999140789578145_839379398840982294584587970773038145228669599_n_2.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_0_1_0_-1692310759026568999140789578145_839379398840982294584587970773038145228669599_n_2.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">E<sub>El17</sub></td>
+ <td align="right">= 17 </td>
+ <td align="left">[<a href="https://web.math.pmf.unizg.hr/~duje/tors/rkeq17.html">Elkies</a>]</td>
+ <td align="right">0</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_0_1_-957089489055751752507625259831765957846101_351598252970651757672333752869879740192822872602430248013582348_n_0.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_0_1_-957089489055751752507625259831765957846101_351598252970651757672333752869879740192822872602430248013582348_n_0.sobj">.sobj</a></td>
+</tr>
+<tr>
+ <td align="left">E<sub>El19</sub></td>
+ <td align="right">= 19</td>
+ <td align="left">[<a href="https://web.math.pmf.unizg.hr/~duje/tors/rkeq19.html">Elkies</a>]</td>
+ <td align="right">0</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_-1_1_31368015812338065133318565292206590792820353345_302038802698566087335643188429543498624522041683874493555186062568159847_n_0.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_-1_1_31368015812338065133318565292206590792820353345_302038802698566087335643188429543498624522041683874493555186062568159847_n_0.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p>
+
+<span class="paragraph">E<sub>El28</sub></span>: <a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind0605&L=NMBRTHRY&F=&S=&P=50">Elkies</a> constructed an elliptic curve over &#x0211a; of rank r&nbsp;&ge;&nbsp;28:
+<div class="equation">
+<span style="font-size:9">y<sup>2</sup> + xy + y = x<sup>3</sup> &minus; x<sup>2</sup> &minus;&nbsp;20067762415575526585033208209338542750930230312178956502</span>x  <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +<span style="font-size:9">&nbsp;34481611795030556467032985690390720374855944359319180361266008296291939448732243429</span>.
+</div>
+
+<p>
+<div class="block">
+Table 4: All integral points on E<sub>El28</sub> which lie in the subgroup of E<sub>El28</sub>(&#x0211a;) generated by 28 independent &#x0211a;-rational points. E<sub>El28</sub>(&#x0211a;) has trivial torsion.
+<hr>
+<div align="center">
+<table>
+<thead>
+<tr>
+ <td align="left">E</td>
+ <td align="right">rank</td>
+ <td align="left">P</td>
+ <td>Text file</td>
+ <td><a href="http://sagemath.org/">Sage</a> file</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td align="left">E<sub>El28</sub></td>
+ <td align="right">&ge; 28</td>
+ <td align="right">[<a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind0605&L=NMBRTHRY&F=&S=&P=50">Elkies</a>]</td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_-1_1_-20067762415575526585033208209338542750930230312178956502_34481611795030556467032985690390720374855944359319180361266008296291939448732243429_n_0.txt">.txt</a></td>
+ <td><a href="s-integral-points-on-elliptic-curves-of-high-rank/E_1_-1_1_-20067762415575526585033208209338542750930230312178956502_34481611795030556467032985690390720374855944359319180361266008296291939448732243429_n_0.sobj">.sobj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<hr class="separator">
+
+</td></tr>
+<tr><td align="center">
+<!--<a href="../">Main page</a>-->
+</td></tr>
+</table>
+</div>
+
+<script type="text/javascript">
+  var sc_project=10974393; 
+  var sc_invisible=1; 
+  var sc_security="f4bfb6d2"; 
+  var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+  document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script>
+
+</body>
+</html>

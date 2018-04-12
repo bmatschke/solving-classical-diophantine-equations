@@ -1,0 +1,16 @@
+# List of all primitive integral solutions of the Thue-Mahler equation
+# 1x^3 + -1x^2y + 1xy^2 + 1y^3 = 1z,
+# such that the only primes dividing z are among S = {11}.
+# It contains 7 pairs in total.
+# Format: "(x, y)".
+# Computing this list took 2 seconds.
+# Authors: Rafael von Känel and Benjamin Matschke, 2015.
+# License: Creative commons 3.0 by-nc.
+#
+(-1, 2)
+(0, 1)
+(1, 0)
+(1, 2)
+(2, -3)
+(4, -3)
+(56, -103)

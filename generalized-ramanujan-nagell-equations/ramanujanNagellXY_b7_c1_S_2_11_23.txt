@@ -1,0 +1,35 @@
+# List of all solutions (x,y) of the generalized Ramanujan-Nagell equation
+# x^2 + 7 = 1 * y, where
+# x >= 0 is an S-integer and y an S-unit, and
+# S = {2,11,23}.
+# It contains 25 pairs in total.
+# Format: "(x,y)".
+# Computing this list took 30 seconds.
+# Authors: Rafael von Känel and Benjamin Matschke, 2015.
+# License: Creative commons 3.0 by-nc.
+#
+(241/1331,12459008/1771561)
+(13/23,3872/529)
+(3/4,121/16)
+(1,8)
+(9/8,529/64)
+(2,11)
+(25/11,1472/121)
+(67/23,8192/529)
+(3,16)
+(4,23)
+(5,32)
+(57/11,4096/121)
+(71/11,5888/121)
+(15/2,253/4)
+(9,88)
+(11,128)
+(13,176)
+(19,368)
+(27,736)
+(31,968)
+(53,2816)
+(65,4232)
+(75,5632)
+(181,32768)
+(211,44528)
